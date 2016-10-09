@@ -124,7 +124,7 @@ public class Csync2ResourceSynchronizer extends CronResourceSynchronizer<Csync2R
 		final Csync2Resource resource = localResourceNode.getResource();
 		final String groups = StringUtility.join(resource.getGroups(), ",");
 
-		List<ResourceSynchronizationResultStep> steps = new ArrayList<>(2);
+		List<ResourceSynchronizationResultStep> steps = new ArrayList<ResourceSynchronizationResultStep>(2);
 
 		// Step one: synchronize or scan
 		{
