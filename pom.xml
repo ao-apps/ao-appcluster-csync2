@@ -32,7 +32,7 @@ along with ao-appcluster-csync2.  If not, see <http://www.gnu.org/licenses />.
 
 	<groupId>com.aoindustries</groupId>
 	<artifactId>ao-appcluster-csync2</artifactId>
-	<version>1.0.1</version>
+	<version>1.0.2-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>AO AppCluster Csync2</name>
@@ -44,7 +44,7 @@ along with ao-appcluster-csync2.  If not, see <http://www.gnu.org/licenses />.
 		<connection>scm:git:git://github.com/aoindustries/ao-appcluster-csync2.git</connection>
 		<developerConnection>scm:git:git@github.com:aoindustries/ao-appcluster-csync2.git</developerConnection>
 		<url>http://github.com/aoindustries/ao-appcluster-csync2</url>
-		<tag>ao-appcluster-csync2-1.0.1</tag>
+		<tag>HEAD</tag>
 	</scm>
 
 	<profiles>
