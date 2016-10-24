@@ -38,8 +38,6 @@ along with ao-appcluster-csync2.  If not, see <http://www.gnu.org/licenses />.
 	<properties>
 		<bookPath>/${project.parent.artifactId}/csync2</bookPath>
 		<shortTitle>Csync2</shortTitle>
-		<javadoc.breadcrumbs><![CDATA[<a target="_top" href="${project.parent.url}">${project.parent.name}</a>
-/ <a target="_top" href="${project.url}">${shortTitle}</a>]]></javadoc.breadcrumbs>
 	</properties>
 
 	<name>AO AppCluster Csync2</name>
