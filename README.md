@@ -3,6 +3,7 @@ Application-level clustering tools for Csync2.
 
 ## Project Links
 * [Project Home](https://www.aoindustries.com/ao-appcluster/csync2/)
+* [Changelog](https://www.aoindustries.com/ao-appcluster/csync2/changelog)
 * [API Docs](https://www.aoindustries.com/ao-appcluster/csync2/apidocs/)
 * [Maven Central Repository](https://search.maven.org/#search%7Cgav%7C1%7Cg:%22com.aoindustries%22%20AND%20a:%22ao-appcluster-csync2%22)
 * [GitHub](https://github.com/aoindustries/ao-appcluster-csync2)
