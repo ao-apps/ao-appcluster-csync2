@@ -1,5 +1,5 @@
 # [<img src="ao-logo.png" alt="AO Logo" width="35" height="40">](https://aoindustries.com/) [AO AppCluster](https://aoindustries.com/ao-appcluster/) / [Csync2](https://aoindustries.com/ao-appcluster/csync2/)
-Application-level clustering tools for Csync2.
+Application-level clustering tools for [Csync2](http://oss.linbit.com/csync2/).
 
 ## Project Links
 * [Project Home](https://aoindustries.com/ao-appcluster/csync2/)

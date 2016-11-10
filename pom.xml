@@ -36,6 +36,7 @@ along with ao-appcluster-csync2.  If not, see <http://www.gnu.org/licenses />.
 	<packaging>jar</packaging>
 
 	<properties>
+		<description.html><![CDATA[Application-level clustering tools for <a target="_top" href="http://oss.linbit.com/csync2/">Csync2</a>.]]></description.html>
 		<shortTitle>Csync2</shortTitle>
 	</properties>
 

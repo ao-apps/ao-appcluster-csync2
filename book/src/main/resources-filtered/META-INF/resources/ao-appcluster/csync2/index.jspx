@@ -38,7 +38,7 @@ along with ao-appcluster-csync2.  If not, see <http://www.gnu.org/licenses />.
 		<core:child page="changelog.jspx" />
 		<core:child page="apidocs/index.jspx" />
 		<p>
-			@{description.html}
+			Application-level clustering tools for <ao:a href="http://oss.linbit.com/csync2/">Csync2</ao:a>.
 		</p>
 		<section:section label="Project Links">
 			<ul>
