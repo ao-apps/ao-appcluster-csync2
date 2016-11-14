@@ -26,8 +26,9 @@ along with ao-appcluster-csync2.  If not, see <http://www.gnu.org/licenses />.
 
 	<parent>
 		<groupId>com.aoindustries</groupId>
-		<artifactId>ao-appcluster</artifactId>
-		<version>1.0.2-SNAPSHOT</version>
+		<artifactId>ao-oss-parent</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+		<relativePath>../../ao-oss-parent/pom.xml</relativePath>
 	</parent>
 
 	<groupId>com.aoindustries</groupId>
@@ -36,12 +37,14 @@ along with ao-appcluster-csync2.  If not, see <http://www.gnu.org/licenses />.
 	<packaging>jar</packaging>
 
 	<properties>
+		<javadoc.breadcrumbs><![CDATA[<a target="_top" href="https://aoindustries.com/ao-appcluster/">AO AppCluster</a>
+/ <a target="_top" href="${project.url}">${shortTitle}</a>]]></javadoc.breadcrumbs>
 		<description.html><![CDATA[Application-level clustering tools for <a target="_top" href="http://oss.linbit.com/csync2/">Csync2</a>.]]></description.html>
 		<shortTitle>Csync2</shortTitle>
 	</properties>
 
 	<name>AO AppCluster Csync2</name>
-	<url>https://aoindustries.com/${project.parent.artifactId}/csync2/</url>
+	<url>https://aoindustries.com/ao-appcluster/csync2/</url>
 	<description>Application-level clustering tools for Csync2.</description>
 	<inceptionYear>2011</inceptionYear>
 
