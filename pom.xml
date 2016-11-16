@@ -27,7 +27,7 @@ along with ao-appcluster-csync2.  If not, see <http://www.gnu.org/licenses />.
 	<parent>
 		<groupId>com.aoindustries</groupId>
 		<artifactId>ao-oss-parent</artifactId>
-		<version>1.0.0-SNAPSHOT</version>
+		<version>1.0.1</version>
 		<relativePath>../../ao-oss-parent/pom.xml</relativePath>
 	</parent>
 
@@ -82,6 +82,11 @@ along with ao-appcluster-csync2.  If not, see <http://www.gnu.org/licenses />.
 
 	<dependencies>
 		<dependency>
+			<groupId>dnsjava</groupId>
+			<artifactId>dnsjava</artifactId>
+			<version>2.1.7</version>
+		</dependency>
+		<dependency>
 			<groupId>com.aoindustries</groupId>
 			<artifactId>ao-appcluster-core</artifactId>
 			<version>1.0.2-SNAPSHOT</version>
@@ -95,11 +100,6 @@ along with ao-appcluster-csync2.  If not, see <http://www.gnu.org/licenses />.
 			<groupId>com.aoindustries</groupId>
 			<artifactId>aocode-public</artifactId>
 			<version>1.8.3-SNAPSHOT</version>
-		</dependency>
-		<dependency>
-			<groupId>dnsjava</groupId>
-			<artifactId>dnsjava</artifactId>
-			<version>2.1.7</version>
 		</dependency>
 	</dependencies>
 </project>
