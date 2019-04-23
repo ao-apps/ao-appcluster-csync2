@@ -62,7 +62,7 @@ public class Csync2ResourcePropertiesConfiguration extends CronResourcePropertie
 	public Set<? extends Csync2ResourceNodePropertiesConfiguration> getResourceNodeConfigurations() throws AppClusterConfigurationException {
 		String resourceId = getId();
 		Set<String> nodeIds = properties.getUniqueStrings("appcluster.resource."+id+".nodes", true);
-		Set<Csync2ResourceNodePropertiesConfiguration> resourceNodes = new LinkedHashSet<Csync2ResourceNodePropertiesConfiguration>(nodeIds.size()*4/3+1);
+		Set<Csync2ResourceNodePropertiesConfiguration> resourceNodes = new LinkedHashSet<>(nodeIds.size()*4/3+1);
 		for(String nodeId : nodeIds) {
 			if(!resourceNodes.add(new Csync2ResourceNodePropertiesConfiguration(properties, resourceId, nodeId, type))) throw new AssertionError();
 		}
