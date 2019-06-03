@@ -29,7 +29,7 @@ along with ao-appcluster-csync2.  If not, see <http://www.gnu.org/licenses />.
 		<relativePath>../../ao-oss-parent/pom.xml</relativePath>
 	</parent>
 
-	<groupId>com.aoindustries</groupId><artifactId>ao-appcluster-csync2</artifactId><version>1.1.0-validation-SNAPSHOT</version>
+	<groupId>com.aoindustries</groupId><artifactId>ao-appcluster-csync2</artifactId><version>1.1.1-SNAPSHOT</version>
 	<packaging>bundle</packaging>
 
 	<properties>
@@ -62,11 +62,12 @@ along with ao-appcluster-csync2.  If not, see <http://www.gnu.org/licenses />.
 						<configuration>
 							<links>
 								<link>${javac.link.javaApi}</link>
-								<link>http://www.dnsjava.org/doc/</link>
+								<!-- Direct -->
 								<link>https://aoindustries.com/ao-appcluster/core/apidocs/</link>
 								<link>https://aoindustries.com/ao-cron/apidocs/</link>
 								<link>https://aoindustries.com/ao-lang/apidocs/</link>
 								<link>https://aoindustries.com/aocode-public/apidocs/</link>
+								<link>http://www.dnsjava.org/doc/</link>
 							</links>
 						</configuration>
 					</plugin>
@@ -75,21 +76,63 @@ along with ao-appcluster-csync2.  If not, see <http://www.gnu.org/licenses />.
 		</profile>
 	</profiles>
 
+	<dependencyManagement>
+		<dependencies>
+			<!-- Direct -->
+			<dependency>
+				<groupId>com.aoindustries</groupId><artifactId>ao-appcluster-core</artifactId><version>1.1.1-SNAPSHOT</version>
+			</dependency>
+			<dependency>
+				<groupId>com.aoindustries</groupId><artifactId>ao-appcluster-core</artifactId><version>1.1.1-SNAPSHOT</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>com.aoindustries</groupId><artifactId>ao-cron</artifactId><version>1.1.0-validation-SNAPSHOT</version>
+			</dependency>
+			<dependency>
+				<groupId>com.aoindustries</groupId><artifactId>ao-cron</artifactId><version>1.1.0-validation-SNAPSHOT</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>com.aoindustries</groupId><artifactId>ao-lang</artifactId><version>2.1.0-SNAPSHOT</version>
+			</dependency>
+			<dependency>
+				<groupId>com.aoindustries</groupId><artifactId>ao-lang</artifactId><version>2.1.0-SNAPSHOT</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>com.aoindustries</groupId><artifactId>aocode-public</artifactId><version>2.1.0-SNAPSHOT</version>
+			</dependency>
+			<dependency>
+				<groupId>com.aoindustries</groupId><artifactId>aocode-public</artifactId><version>2.1.0-SNAPSHOT</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>dnsjava</groupId><artifactId>dnsjava</artifactId><version>2.1.8</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
 	<dependencies>
+		<!-- Direct -->
 		<dependency>
-			<groupId>dnsjava</groupId><artifactId>dnsjava</artifactId><version>2.1.8</version>
+			<groupId>com.aoindustries</groupId><artifactId>ao-appcluster-core</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>com.aoindustries</groupId><artifactId>ao-appcluster-core</artifactId><version>1.1.0-validation-SNAPSHOT</version>
+			<groupId>com.aoindustries</groupId><artifactId>ao-cron</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>com.aoindustries</groupId><artifactId>ao-cron</artifactId><version>1.1.0-validation-SNAPSHOT</version>
+			<groupId>com.aoindustries</groupId><artifactId>ao-lang</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>com.aoindustries</groupId><artifactId>ao-lang</artifactId><version>2.1.0-SNAPSHOT</version>
+			<groupId>com.aoindustries</groupId><artifactId>aocode-public</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>com.aoindustries</groupId><artifactId>aocode-public</artifactId><version>2.1.0-SNAPSHOT</version>
+			<groupId>dnsjava</groupId><artifactId>dnsjava</artifactId>
 		</dependency>
 	</dependencies>
 </project>
