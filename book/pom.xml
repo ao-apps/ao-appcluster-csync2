@@ -35,8 +35,6 @@ along with ao-appcluster-csync2.  If not, see <http://www.gnu.org/licenses />.
 	<properties>
 		<!-- These values are copied from the project being documented -->
 		<documented.artifactId>ao-appcluster-csync2</documented.artifactId>
-		<documented.javaVersion>1.8</documented.javaVersion>
-		<documented.javac.link.javaApi>${javac.link.javaApi.jdk8}</documented.javac.link.javaApi>
 		<documented.name>AO AppCluster Csync2</documented.name>
 		<documented.shortTitle>Csync2</documented.shortTitle>
 		<documented.description>Application-level clustering tools for Csync2.</documented.description>
