@@ -1,6 +1,6 @@
 /*
  * ao-appcluster-csync2 - Application-level clustering tools for Csync2.
- * Copyright (C) 2011, 2015, 2016, 2019  AO Industries, Inc.
+ * Copyright (C) 2011, 2015, 2016, 2019, 2020  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -32,7 +32,7 @@ import com.aoindustries.appcluster.ResourceSynchronizationResultStep;
 import com.aoindustries.cron.Schedule;
 import com.aoindustries.lang.ProcessResult;
 import com.aoindustries.util.ErrorPrinter;
-import com.aoindustries.util.StringUtility;
+import com.aoindustries.lang.Strings;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -122,7 +122,7 @@ public class Csync2ResourceSynchronizer extends CronResourceSynchronizer<Csync2R
 		final String localHostname = localResourceNode.getNode().getHostname().toString();
 		final String remoteHostname = remoteResourceNode.getNode().getHostname().toString();
 		final Csync2Resource resource = localResourceNode.getResource();
-		final String groups = StringUtility.join(resource.getGroups(), ",");
+		final String groups = Strings.join(resource.getGroups(), ",");
 
 		List<ResourceSynchronizationResultStep> steps = new ArrayList<>(2);
 
