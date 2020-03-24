@@ -1,6 +1,6 @@
 /*
  * ao-appcluster-csync2 - Application-level clustering tools for Csync2.
- * Copyright (C) 2011, 2016  AO Industries, Inc.
+ * Copyright (C) 2011, 2016, 2020  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -27,7 +27,7 @@ import com.aoindustries.appcluster.AppClusterConfigurationException;
 import com.aoindustries.appcluster.CronResource;
 import com.aoindustries.appcluster.ResourceConfiguration;
 import com.aoindustries.appcluster.ResourceNode;
-import com.aoindustries.util.AoCollections;
+import com.aoindustries.collections.AoCollections;
 import java.util.Collection;
 import java.util.Set;
 
