@@ -25,7 +25,7 @@ along with ao-appcluster-csync2.  If not, see <http://www.gnu.org/licenses />.
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>com.aoindustries</groupId><artifactId>ao-oss-parent</artifactId><version>1.7.2-POST-SNAPSHOT</version>
+		<groupId>com.aoindustries</groupId><artifactId>ao-oss-parent</artifactId><version>1.8.0-SNAPSHOT</version>
 		<relativePath>../../ao-oss-parent/pom.xml</relativePath>
 	</parent>
 
@@ -33,9 +33,9 @@ along with ao-appcluster-csync2.  If not, see <http://www.gnu.org/licenses />.
 	<packaging>bundle</packaging>
 
 	<properties>
-		<javadoc.breadcrumbs><![CDATA[<a target="_top" href="https://aoindustries.com/ao-appcluster/">AO AppCluster</a>
-/ <a target="_top" href="${project.url}">${shortTitle}</a>]]></javadoc.breadcrumbs>
-		<description.html><![CDATA[Application-level clustering tools for <a target="_top" href="http://oss.linbit.com/csync2/">Csync2</a>.]]></description.html>
+		<javadoc.breadcrumbs><![CDATA[<a target="${javadoc.target}" href="https://aoindustries.com/ao-appcluster/">AO AppCluster</a>
+/ <a target="${javadoc.target}" href="${project.url}">${shortTitle}</a>]]></javadoc.breadcrumbs>
+		<description.html><![CDATA[Application-level clustering tools for <a target="${javadoc.target}" href="http://oss.linbit.com/csync2/">Csync2</a>.]]></description.html>
 		<shortTitle>Csync2</shortTitle>
 		<!-- Dependencies -->
 		<dnsjava.dnsjava.version>3.0.2</dnsjava.dnsjava.version>
