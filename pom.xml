@@ -38,7 +38,7 @@ along with ao-appcluster-csync2.  If not, see <http://www.gnu.org/licenses />.
 		<description.html><![CDATA[Application-level clustering tools for <a target="${javadoc.target}" href="http://oss.linbit.com/csync2/">Csync2</a>.]]></description.html>
 		<shortTitle>Csync2</shortTitle>
 		<!-- Dependencies -->
-		<dnsjava.dnsjava.version>3.0.2</dnsjava.dnsjava.version>
+		<dnsjava.dnsjava.version>3.1.0</dnsjava.dnsjava.version>
 	</properties>
 
 	<name>AO AppCluster Csync2</name>
