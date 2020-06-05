@@ -105,10 +105,6 @@ along with ao-appcluster-csync2.  If not, see <http://www.gnu.org/licenses />.
 						<groupId>org.apache.maven.plugins</groupId><artifactId>maven-javadoc-plugin</artifactId>
 						<configuration>
 							<offlineLinks>
-								<offlineLink>
-									<url>${javadoc.link.javase}</url>
-									<location>${project.build.directory}/offlineLinks/com/aoindustries/javadoc/offline/javase/${javase.release}</location>
-								</offlineLink>
 								<!-- Direct -->
 								<offlineLink>
 									<url>https://aoindustries.com/ao-appcluster/core/apidocs/</url>
@@ -129,6 +125,11 @@ along with ao-appcluster-csync2.  If not, see <http://www.gnu.org/licenses />.
 								<offlineLink>
 									<url>https://javadoc.io/doc/dnsjava/dnsjava/${dnsjava.dnsjava.version}/</url>
 									<location>${project.build.directory}/offlineLinks/dnsjava/dnsjava</location>
+								</offlineLink>
+								<!-- Java SE -->
+								<offlineLink>
+									<url>${javadoc.link.javase}</url>
+									<location>${project.build.directory}/offlineLinks/com/aoindustries/javadoc/offline/javase/${javase.release}</location>
 								</offlineLink>
 							</offlineLinks>
 						</configuration>
