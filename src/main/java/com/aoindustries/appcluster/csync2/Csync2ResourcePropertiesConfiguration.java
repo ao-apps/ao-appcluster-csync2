@@ -54,6 +54,7 @@ public class Csync2ResourcePropertiesConfiguration extends CronResourcePropertie
 	}
 
 	@Override
+	@SuppressWarnings("ReturnOfCollectionOrArrayField") // Returning unmodifiable
 	public Set<String> getGroups() {
 		return groups;
 	}

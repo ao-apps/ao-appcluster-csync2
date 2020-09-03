@@ -31,8 +31,8 @@ import com.aoindustries.appcluster.ResourceSynchronizationResult;
 import com.aoindustries.appcluster.ResourceSynchronizationResultStep;
 import com.aoindustries.cron.Schedule;
 import com.aoindustries.lang.ProcessResult;
-import com.aoindustries.util.ErrorPrinter;
 import com.aoindustries.lang.Strings;
+import com.aoindustries.util.ErrorPrinter;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -117,6 +117,7 @@ public class Csync2ResourceSynchronizer extends CronResourceSynchronizer<Csync2R
 	 * </ol>
 	 */
 	@Override
+	@SuppressWarnings({"UseSpecificCatch", "TooBroadCatch"})
 	protected ResourceSynchronizationResult synchronize(ResourceSynchronizationMode mode, ResourceNodeDnsResult localDnsResult, ResourceNodeDnsResult remoteDnsResult) {
 		final String exe = localResourceNode.getExe();
 		final String localHostname = localResourceNode.getNode().getHostname().toString();
@@ -157,7 +158,9 @@ public class Csync2ResourceSynchronizer extends CronResourceSynchronizer<Csync2R
 					null,
 					getList(processResult.getStderr())
 				);
-			} catch(Exception exc) {
+			} catch(ThreadDeath TD) {
+				throw TD;
+			} catch(Throwable t) {
 				step = new ResourceSynchronizationResultStep(
 					startTime,
 					System.currentTimeMillis(),
@@ -165,7 +168,7 @@ public class Csync2ResourceSynchronizer extends CronResourceSynchronizer<Csync2R
 					commandString,
 					null,
 					null,
-					Collections.singletonList(ErrorPrinter.getStackTraces(exc))
+					Collections.singletonList(ErrorPrinter.getStackTraces(t))
 				);
 			}
 			steps.add(step);

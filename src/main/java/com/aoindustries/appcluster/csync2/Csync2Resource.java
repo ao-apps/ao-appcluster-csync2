@@ -52,6 +52,7 @@ public class Csync2Resource extends CronResource<Csync2Resource,Csync2ResourceNo
 		return allowMultiMaster;
 	}
 
+	@SuppressWarnings("ReturnOfCollectionOrArrayField") // Returning unmodifiable
 	public Set<String> getGroups() {
 		return groups;
 	}
