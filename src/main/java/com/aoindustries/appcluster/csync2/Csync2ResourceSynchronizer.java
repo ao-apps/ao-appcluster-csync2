@@ -158,8 +158,8 @@ public class Csync2ResourceSynchronizer extends CronResourceSynchronizer<Csync2R
 					null,
 					getList(processResult.getStderr())
 				);
-			} catch(ThreadDeath TD) {
-				throw TD;
+			} catch(ThreadDeath td) {
+				throw td;
 			} catch(Throwable t) {
 				step = new ResourceSynchronizationResultStep(
 					startTime,
@@ -195,7 +195,9 @@ public class Csync2ResourceSynchronizer extends CronResourceSynchronizer<Csync2R
 					exitVal==0 ? getList(processResult.getStderr()) : null,
 					exitVal!=0 ? getList(processResult.getStderr()) : null
 				);
-			} catch(Exception exc) {
+			} catch(ThreadDeath td) {
+				throw td;
+			} catch(Throwable t) {
 				step = new ResourceSynchronizationResultStep(
 					startTime,
 					System.currentTimeMillis(),
@@ -203,7 +205,7 @@ public class Csync2ResourceSynchronizer extends CronResourceSynchronizer<Csync2R
 					commandString,
 					null,
 					null,
-					Collections.singletonList(ErrorPrinter.getStackTraces(exc))
+					Collections.singletonList(ErrorPrinter.getStackTraces(t))
 				);
 			}
 			steps.add(step);
