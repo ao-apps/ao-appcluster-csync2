@@ -182,7 +182,7 @@ along with ao-appcluster-csync2.  If not, see <http://www.gnu.org/licenses />.
 			</dependency>
 			<!-- Transitive -->
 			<dependency>
-				<groupId>com.aoindustries</groupId><artifactId>ao-concurrent</artifactId><version>3.0.0${POST-SNAPSHOT}</version>
+				<groupId>com.aoindustries</groupId><artifactId>ao-concurrent</artifactId><version>3.1.0${POST-SNAPSHOT}</version>
 			</dependency>
 			<dependency>
 				<groupId>com.aoindustries</groupId><artifactId>ao-sql</artifactId><version>1.0.1${POST-SNAPSHOT}</version>
