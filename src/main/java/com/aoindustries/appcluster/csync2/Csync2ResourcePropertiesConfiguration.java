@@ -1,6 +1,6 @@
 /*
  * ao-appcluster-csync2 - Application-level clustering tools for Csync2.
- * Copyright (C) 2011, 2015, 2016, 2020  AO Industries, Inc.
+ * Copyright (C) 2011, 2015, 2016, 2020, 2021  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -36,7 +36,7 @@ import java.util.Set;
  *
  * @author  AO Industries, Inc.
  */
-public class Csync2ResourcePropertiesConfiguration extends CronResourcePropertiesConfiguration<Csync2Resource,Csync2ResourceNode> implements Csync2ResourceConfiguration {
+public class Csync2ResourcePropertiesConfiguration extends CronResourcePropertiesConfiguration<Csync2Resource, Csync2ResourceNode> implements Csync2ResourceConfiguration {
 
 	private final boolean allowMultiMaster;
 	private final Set<String> groups;
@@ -70,7 +70,7 @@ public class Csync2ResourcePropertiesConfiguration extends CronResourcePropertie
 	}
 
 	@Override
-	public Csync2Resource newResource(AppCluster cluster, Collection<? extends ResourceNode<?,?>> resourceNodes) throws AppClusterConfigurationException {
+	public Csync2Resource newResource(AppCluster cluster, Collection<? extends ResourceNode<?, ?>> resourceNodes) throws AppClusterConfigurationException {
 		return new Csync2Resource(cluster, this, resourceNodes);
 	}
 }

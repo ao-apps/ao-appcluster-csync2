@@ -1,6 +1,6 @@
 /*
  * ao-appcluster-csync2 - Application-level clustering tools for Csync2.
- * Copyright (C) 2011, 2016  AO Industries, Inc.
+ * Copyright (C) 2011, 2016, 2021  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -32,10 +32,10 @@ import com.aoindustries.appcluster.ResourcePropertiesConfigurationFactory;
  *
  * @author  AO Industries, Inc.
  */
-public class Csync2ResourcePropertiesConfigurationFactory implements ResourcePropertiesConfigurationFactory<Csync2Resource,Csync2ResourceNode> {
+public class Csync2ResourcePropertiesConfigurationFactory implements ResourcePropertiesConfigurationFactory<Csync2Resource, Csync2ResourceNode> {
 
 	@Override
-	public ResourcePropertiesConfiguration<Csync2Resource,Csync2ResourceNode> newResourcePropertiesConfiguration(AppClusterPropertiesConfiguration properties, String id) throws AppClusterConfigurationException {
+	public ResourcePropertiesConfiguration<Csync2Resource, Csync2ResourceNode> newResourcePropertiesConfiguration(AppClusterPropertiesConfiguration properties, String id) throws AppClusterConfigurationException {
 		return new Csync2ResourcePropertiesConfiguration(properties, id);
 	}
 }

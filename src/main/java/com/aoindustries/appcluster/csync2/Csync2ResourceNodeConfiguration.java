@@ -1,6 +1,6 @@
 /*
  * ao-appcluster-csync2 - Application-level clustering tools for Csync2.
- * Copyright (C) 2011, 2016  AO Industries, Inc.
+ * Copyright (C) 2011, 2016, 2021  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -31,7 +31,7 @@ import com.aoindustries.appcluster.Node;
  *
  * @author  AO Industries, Inc.
  */
-public interface Csync2ResourceNodeConfiguration extends CronResourceNodeConfiguration<Csync2Resource,Csync2ResourceNode> {
+public interface Csync2ResourceNodeConfiguration extends CronResourceNodeConfiguration<Csync2Resource, Csync2ResourceNode> {
 
 	/**
 	 * @see Csync2ResourceNode#getExe()

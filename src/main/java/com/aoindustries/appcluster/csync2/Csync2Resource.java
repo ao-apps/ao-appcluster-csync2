@@ -1,6 +1,6 @@
 /*
  * ao-appcluster-csync2 - Application-level clustering tools for Csync2.
- * Copyright (C) 2011, 2016, 2020  AO Industries, Inc.
+ * Copyright (C) 2011, 2016, 2020, 2021  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -36,12 +36,12 @@ import java.util.Set;
  *
  * @author  AO Industries, Inc.
  */
-public class Csync2Resource extends CronResource<Csync2Resource,Csync2ResourceNode> {
+public class Csync2Resource extends CronResource<Csync2Resource, Csync2ResourceNode> {
 
 	private final boolean allowMultiMaster;
 	private final Set<String> groups;
 
-	protected Csync2Resource(AppCluster cluster, Csync2ResourceConfiguration resourceConfiguration, Collection<? extends ResourceNode<?,?>> resourceNodes) throws AppClusterConfigurationException {
+	protected Csync2Resource(AppCluster cluster, Csync2ResourceConfiguration resourceConfiguration, Collection<? extends ResourceNode<?, ?>> resourceNodes) throws AppClusterConfigurationException {
 		super(cluster, resourceConfiguration, resourceNodes);
 		this.allowMultiMaster = resourceConfiguration.getAllowMultiMaster();
 		this.groups = AoCollections.unmodifiableCopySet(resourceConfiguration.getGroups());
@@ -58,7 +58,7 @@ public class Csync2Resource extends CronResource<Csync2Resource,Csync2ResourceNo
 	}
 
 	@Override
-	protected Csync2ResourceSynchronizer newResourceSynchronizer(Csync2ResourceNode localResourceNode, Csync2ResourceNode remoteResourceNode, ResourceConfiguration<Csync2Resource,Csync2ResourceNode> resourceConfiguration) throws AppClusterConfigurationException {
+	protected Csync2ResourceSynchronizer newResourceSynchronizer(Csync2ResourceNode localResourceNode, Csync2ResourceNode remoteResourceNode, ResourceConfiguration<Csync2Resource, Csync2ResourceNode> resourceConfiguration) throws AppClusterConfigurationException {
 		Csync2ResourceConfiguration csync2ResourceConfiguration = (Csync2ResourceConfiguration)resourceConfiguration;
 		return new Csync2ResourceSynchronizer(
 			localResourceNode,
