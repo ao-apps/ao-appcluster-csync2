@@ -20,19 +20,19 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with ao-appcluster-csync2.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.aoindustries.appcluster.csync2;
+package com.aoapps.appcluster.csync2;
 
-import com.aoindustries.appcluster.CronResourceSynchronizer;
-import com.aoindustries.appcluster.NodeDnsStatus;
-import com.aoindustries.appcluster.ResourceNodeDnsResult;
-import com.aoindustries.appcluster.ResourceStatus;
-import com.aoindustries.appcluster.ResourceSynchronizationMode;
-import com.aoindustries.appcluster.ResourceSynchronizationResult;
-import com.aoindustries.appcluster.ResourceSynchronizationResultStep;
-import com.aoindustries.cron.Schedule;
-import com.aoindustries.lang.ProcessResult;
-import com.aoindustries.lang.Strings;
-import com.aoindustries.util.ErrorPrinter;
+import com.aoapps.appcluster.CronResourceSynchronizer;
+import com.aoapps.appcluster.NodeDnsStatus;
+import com.aoapps.appcluster.ResourceNodeDnsResult;
+import com.aoapps.appcluster.ResourceStatus;
+import com.aoapps.appcluster.ResourceSynchronizationMode;
+import com.aoapps.appcluster.ResourceSynchronizationResult;
+import com.aoapps.appcluster.ResourceSynchronizationResultStep;
+import com.aoapps.cron.Schedule;
+import com.aoapps.lang.ProcessResult;
+import com.aoapps.lang.Strings;
+import com.aoapps.lang.util.ErrorPrinter;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;

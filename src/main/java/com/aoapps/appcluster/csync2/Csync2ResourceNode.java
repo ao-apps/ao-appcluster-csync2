@@ -20,11 +20,11 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with ao-appcluster-csync2.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.aoindustries.appcluster.csync2;
+package com.aoapps.appcluster.csync2;
 
-import com.aoindustries.appcluster.AppClusterConfigurationException;
-import com.aoindustries.appcluster.CronResourceNode;
-import com.aoindustries.appcluster.Node;
+import com.aoapps.appcluster.AppClusterConfigurationException;
+import com.aoapps.appcluster.CronResourceNode;
+import com.aoapps.appcluster.Node;
 
 /**
  * The node settings for csync2 synchronization.

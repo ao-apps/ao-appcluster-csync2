@@ -20,35 +20,22 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with ao-appcluster-csync2.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.aoindustries.appcluster.csync2;
+package com.aoapps.appcluster.csync2;
 
-import com.aoindustries.appcluster.AppCluster;
-import com.aoindustries.appcluster.AppClusterConfigurationException;
-import com.aoindustries.appcluster.CronResourceConfiguration;
-import com.aoindustries.appcluster.ResourceNode;
-import java.util.Collection;
-import java.util.Set;
+import com.aoapps.appcluster.AppClusterConfigurationException;
+import com.aoapps.appcluster.AppClusterPropertiesConfiguration;
+import com.aoapps.appcluster.ResourcePropertiesConfiguration;
+import com.aoapps.appcluster.ResourcePropertiesConfigurationFactory;
 
 /**
- * The configuration for a csync2 resource.
+ * Loads the configuration for a csync2 resource.
  *
  * @author  AO Industries, Inc.
  */
-public interface Csync2ResourceConfiguration extends CronResourceConfiguration<Csync2Resource, Csync2ResourceNode> {
-
-	/**
-	 * @see Csync2Resource#getAllowMultiMaster()
-	 */
-	boolean getAllowMultiMaster();
-
-	/**
-	 * Gets all the groups that will be synchronized by csync2 for this resource.
-	 */
-	Collection<String> getGroups();
+public class Csync2ResourcePropertiesConfigurationFactory implements ResourcePropertiesConfigurationFactory<Csync2Resource, Csync2ResourceNode> {
 
 	@Override
-	Set<? extends Csync2ResourceNodeConfiguration> getResourceNodeConfigurations() throws AppClusterConfigurationException;
-
-	@Override
-	Csync2Resource newResource(AppCluster cluster, Collection<? extends ResourceNode<?, ?>> resourceNodes) throws AppClusterConfigurationException;
+	public ResourcePropertiesConfiguration<Csync2Resource, Csync2ResourceNode> newResourcePropertiesConfiguration(AppClusterPropertiesConfiguration properties, String id) throws AppClusterConfigurationException {
+		return new Csync2ResourcePropertiesConfiguration(properties, id);
+	}
 }
