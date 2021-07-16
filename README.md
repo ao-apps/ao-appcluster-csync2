@@ -9,6 +9,12 @@
 
 [![Build](https://github.com/aoindustries/ao-appcluster-csync2/workflows/Build/badge.svg?branch=master)](https://github.com/aoindustries/ao-appcluster-csync2/actions?query=workflow%3ABuild)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.aoapps/ao-appcluster-csync2/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.aoapps/ao-appcluster-csync2)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?branch=master&project=com.aoapps%3Aao-appcluster-csync2&metric=alert_status)](https://sonarcloud.io/dashboard?branch=master&id=com.aoapps%3Aao-appcluster-csync2)
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?branch=master&project=com.aoapps%3Aao-appcluster-csync2&metric=ncloc)](https://sonarcloud.io/component_measures?branch=master&id=com.aoapps%3Aao-appcluster-csync2&metric=ncloc)  
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?branch=master&project=com.aoapps%3Aao-appcluster-csync2&metric=reliability_rating)](https://sonarcloud.io/component_measures?branch=master&id=com.aoapps%3Aao-appcluster-csync2&metric=Reliability)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?branch=master&project=com.aoapps%3Aao-appcluster-csync2&metric=security_rating)](https://sonarcloud.io/component_measures?branch=master&id=com.aoapps%3Aao-appcluster-csync2&metric=Security)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?branch=master&project=com.aoapps%3Aao-appcluster-csync2&metric=sqale_rating)](https://sonarcloud.io/component_measures?branch=master&id=com.aoapps%3Aao-appcluster-csync2&metric=Maintainability)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?branch=master&project=com.aoapps%3Aao-appcluster-csync2&metric=coverage)](https://sonarcloud.io/component_measures?branch=master&id=com.aoapps%3Aao-appcluster-csync2&metric=Coverage)
 
 Application-level clustering tools for [Csync2](http://oss.linbit.com/csync2/).
 
