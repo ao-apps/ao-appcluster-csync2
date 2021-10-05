@@ -40,7 +40,7 @@ along with ao-appcluster-csync2.  If not, see <http://www.gnu.org/licenses />.
 		<description.html><![CDATA[Application-level clustering tools for <a target="${javadoc.target}" href="http://oss.linbit.com/csync2/">Csync2</a>.]]></description.html>
 		<!-- SonarQube -->
 		<sonar.projectKey>${project.groupId}:${project.artifactId}</sonar.projectKey>
-		<sonar.organization>aoindustries</sonar.organization>
+		<sonar.organization>ao-apps</sonar.organization>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 		<!-- TODO: Implement tests -->
 		<sonar.coverage.exclusions>**.*</sonar.coverage.exclusions>
@@ -77,20 +77,20 @@ along with ao-appcluster-csync2.  If not, see <http://www.gnu.org/licenses />.
 	</developers>
 
 	<scm>
-		<connection>scm:git:git://github.com/aoindustries/ao-appcluster-csync2.git</connection>
-		<developerConnection>scm:git:git@github.com:aoindustries/ao-appcluster-csync2.git</developerConnection>
-		<url>https://github.com/aoindustries/ao-appcluster-csync2</url>
+		<connection>scm:git:git://github.com/ao-apps/ao-appcluster-csync2.git</connection>
+		<developerConnection>scm:git:git@github.com:ao-apps/ao-appcluster-csync2.git</developerConnection>
+		<url>https://github.com/ao-apps/ao-appcluster-csync2</url>
 		<tag>HEAD</tag>
 	</scm>
 
 	<issueManagement>
 		<system>GitHub Issues</system>
-		<url>https://github.com/aoindustries/ao-appcluster-csync2/issues</url>
+		<url>https://github.com/ao-apps/ao-appcluster-csync2/issues</url>
 	</issueManagement>
 
 	<ciManagement>
 		<system>GitHub Actions</system>
-		<url>https://github.com/aoindustries/ao-appcluster-csync2/actions</url>
+		<url>https://github.com/ao-apps/ao-appcluster-csync2/actions</url>
 	</ciManagement>
 
 	<repositories>
