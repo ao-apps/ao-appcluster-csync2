@@ -45,7 +45,7 @@ along with ao-appcluster-csync2.  If not, see <https://www.gnu.org/licenses/>.
 		<!-- TODO: Implement tests -->
 		<sonar.coverage.exclusions>**.*</sonar.coverage.exclusions>
 		<!-- Dependencies -->
-		<dnsjava.version>3.4.3</dnsjava.version>
+		<dnsjava.version>3.5.0</dnsjava.version>
 	</properties>
 
 	<name>AO AppCluster Csync2</name>
