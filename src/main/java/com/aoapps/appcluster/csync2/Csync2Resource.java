@@ -39,33 +39,33 @@ import java.util.Set;
  */
 public class Csync2Resource extends CronResource<Csync2Resource, Csync2ResourceNode> {
 
-	private final boolean allowMultiMaster;
-	private final Set<String> groups;
+  private final boolean allowMultiMaster;
+  private final Set<String> groups;
 
-	protected Csync2Resource(AppCluster cluster, Csync2ResourceConfiguration resourceConfiguration, Collection<? extends ResourceNode<?, ?>> resourceNodes) throws AppClusterConfigurationException {
-		super(cluster, resourceConfiguration, resourceNodes);
-		this.allowMultiMaster = resourceConfiguration.getAllowMultiMaster();
-		this.groups = AoCollections.unmodifiableCopySet(resourceConfiguration.getGroups());
-	}
+  protected Csync2Resource(AppCluster cluster, Csync2ResourceConfiguration resourceConfiguration, Collection<? extends ResourceNode<?, ?>> resourceNodes) throws AppClusterConfigurationException {
+    super(cluster, resourceConfiguration, resourceNodes);
+    this.allowMultiMaster = resourceConfiguration.getAllowMultiMaster();
+    this.groups = AoCollections.unmodifiableCopySet(resourceConfiguration.getGroups());
+  }
 
-	@Override
-	public boolean getAllowMultiMaster() {
-		return allowMultiMaster;
-	}
+  @Override
+  public boolean getAllowMultiMaster() {
+    return allowMultiMaster;
+  }
 
-	@SuppressWarnings("ReturnOfCollectionOrArrayField") // Returning unmodifiable
-	public Set<String> getGroups() {
-		return groups;
-	}
+  @SuppressWarnings("ReturnOfCollectionOrArrayField") // Returning unmodifiable
+  public Set<String> getGroups() {
+    return groups;
+  }
 
-	@Override
-	protected Csync2ResourceSynchronizer newResourceSynchronizer(Csync2ResourceNode localResourceNode, Csync2ResourceNode remoteResourceNode, ResourceConfiguration<Csync2Resource, Csync2ResourceNode> resourceConfiguration) throws AppClusterConfigurationException {
-		Csync2ResourceConfiguration csync2ResourceConfiguration = (Csync2ResourceConfiguration)resourceConfiguration;
-		return new Csync2ResourceSynchronizer(
-			localResourceNode,
-			remoteResourceNode,
-			csync2ResourceConfiguration.getSynchronizeSchedule(localResourceNode, remoteResourceNode),
-			csync2ResourceConfiguration.getTestSchedule(localResourceNode, remoteResourceNode)
-		);
-	}
+  @Override
+  protected Csync2ResourceSynchronizer newResourceSynchronizer(Csync2ResourceNode localResourceNode, Csync2ResourceNode remoteResourceNode, ResourceConfiguration<Csync2Resource, Csync2ResourceNode> resourceConfiguration) throws AppClusterConfigurationException {
+    Csync2ResourceConfiguration csync2ResourceConfiguration = (Csync2ResourceConfiguration)resourceConfiguration;
+    return new Csync2ResourceSynchronizer(
+      localResourceNode,
+      remoteResourceNode,
+      csync2ResourceConfiguration.getSynchronizeSchedule(localResourceNode, remoteResourceNode),
+      csync2ResourceConfiguration.getTestSchedule(localResourceNode, remoteResourceNode)
+    );
+  }
 }

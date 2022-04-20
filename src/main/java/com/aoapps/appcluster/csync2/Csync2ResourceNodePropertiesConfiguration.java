@@ -35,20 +35,20 @@ import com.aoapps.appcluster.Node;
  */
 public class Csync2ResourceNodePropertiesConfiguration extends CronResourceNodePropertiesConfiguration<Csync2Resource, Csync2ResourceNode> implements Csync2ResourceNodeConfiguration {
 
-	private final String exe;
+  private final String exe;
 
-	protected Csync2ResourceNodePropertiesConfiguration(AppClusterPropertiesConfiguration properties, String resourceId, String nodeId, String type) throws AppClusterConfigurationException {
-		super(properties, resourceId, nodeId);
-		this.exe = properties.getString("appcluster.resource."+resourceId+".node."+nodeId+"."+type+".exe", true);
-	}
+  protected Csync2ResourceNodePropertiesConfiguration(AppClusterPropertiesConfiguration properties, String resourceId, String nodeId, String type) throws AppClusterConfigurationException {
+    super(properties, resourceId, nodeId);
+    this.exe = properties.getString("appcluster.resource."+resourceId+".node."+nodeId+"."+type+".exe", true);
+  }
 
-	@Override
-	public String getExe() {
-		return exe;
-	}
+  @Override
+  public String getExe() {
+    return exe;
+  }
 
-	@Override
-	public Csync2ResourceNode newResourceNode(Node node) throws AppClusterConfigurationException {
-		return new Csync2ResourceNode(node, this);
-	}
+  @Override
+  public Csync2ResourceNode newResourceNode(Node node) throws AppClusterConfigurationException {
+    return new Csync2ResourceNode(node, this);
+  }
 }

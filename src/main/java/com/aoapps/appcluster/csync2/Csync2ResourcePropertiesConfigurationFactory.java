@@ -35,8 +35,8 @@ import com.aoapps.appcluster.ResourcePropertiesConfigurationFactory;
  */
 public class Csync2ResourcePropertiesConfigurationFactory implements ResourcePropertiesConfigurationFactory<Csync2Resource, Csync2ResourceNode> {
 
-	@Override
-	public ResourcePropertiesConfiguration<Csync2Resource, Csync2ResourceNode> newResourcePropertiesConfiguration(AppClusterPropertiesConfiguration properties, String id) throws AppClusterConfigurationException {
-		return new Csync2ResourcePropertiesConfiguration(properties, id);
-	}
+  @Override
+  public ResourcePropertiesConfiguration<Csync2Resource, Csync2ResourceNode> newResourcePropertiesConfiguration(AppClusterPropertiesConfiguration properties, String id) throws AppClusterConfigurationException {
+    return new Csync2ResourcePropertiesConfiguration(properties, id);
+  }
 }

@@ -37,19 +37,19 @@ import java.util.Set;
  */
 public interface Csync2ResourceConfiguration extends CronResourceConfiguration<Csync2Resource, Csync2ResourceNode> {
 
-	/**
-	 * @see Csync2Resource#getAllowMultiMaster()
-	 */
-	boolean getAllowMultiMaster();
+  /**
+   * @see Csync2Resource#getAllowMultiMaster()
+   */
+  boolean getAllowMultiMaster();
 
-	/**
-	 * Gets all the groups that will be synchronized by csync2 for this resource.
-	 */
-	Collection<String> getGroups();
+  /**
+   * Gets all the groups that will be synchronized by csync2 for this resource.
+   */
+  Collection<String> getGroups();
 
-	@Override
-	Set<? extends Csync2ResourceNodeConfiguration> getResourceNodeConfigurations() throws AppClusterConfigurationException;
+  @Override
+  Set<? extends Csync2ResourceNodeConfiguration> getResourceNodeConfigurations() throws AppClusterConfigurationException;
 
-	@Override
-	Csync2Resource newResource(AppCluster cluster, Collection<? extends ResourceNode<?, ?>> resourceNodes) throws AppClusterConfigurationException;
+  @Override
+  Csync2Resource newResource(AppCluster cluster, Collection<? extends ResourceNode<?, ?>> resourceNodes) throws AppClusterConfigurationException;
 }

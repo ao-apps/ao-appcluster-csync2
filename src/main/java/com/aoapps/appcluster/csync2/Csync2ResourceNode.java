@@ -33,17 +33,17 @@ import com.aoapps.appcluster.Node;
  */
 public class Csync2ResourceNode extends CronResourceNode<Csync2Resource, Csync2ResourceNode> {
 
-	private final String exe;
+  private final String exe;
 
-	protected Csync2ResourceNode(Node node, Csync2ResourceNodeConfiguration resourceNodeConfiguration) {
-		super(node, resourceNodeConfiguration);
-		this.exe = resourceNodeConfiguration.getExe();
-	}
+  protected Csync2ResourceNode(Node node, Csync2ResourceNodeConfiguration resourceNodeConfiguration) {
+    super(node, resourceNodeConfiguration);
+    this.exe = resourceNodeConfiguration.getExe();
+  }
 
-	/**
-	 * Gets the path to the csync2 executable.
-	 */
-	public String getExe() {
-		return exe;
-	}
+  /**
+   * Gets the path to the csync2 executable.
+   */
+  public String getExe() {
+    return exe;
+  }
 }
