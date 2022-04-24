@@ -44,8 +44,8 @@ public class Csync2ResourcePropertiesConfiguration extends CronResourcePropertie
 
   protected Csync2ResourcePropertiesConfiguration(AppClusterPropertiesConfiguration properties, String id) throws AppClusterConfigurationException {
     super(properties, id);
-    this.allowMultiMaster = properties.getBoolean("appcluster.resource."+id+"."+type+".allowMultiMaster");
-    this.groups = properties.getUniqueStrings("appcluster.resource."+id+"."+type+".groups", true);
+    this.allowMultiMaster = properties.getBoolean("appcluster.resource." + id + "." + type + ".allowMultiMaster");
+    this.groups = properties.getUniqueStrings("appcluster.resource." + id + "." + type + ".groups", true);
   }
 
   @Override
@@ -62,7 +62,7 @@ public class Csync2ResourcePropertiesConfiguration extends CronResourcePropertie
   @Override
   public Set<? extends Csync2ResourceNodePropertiesConfiguration> getResourceNodeConfigurations() throws AppClusterConfigurationException {
     String resourceId = getId();
-    Set<String> nodeIds = properties.getUniqueStrings("appcluster.resource."+id+".nodes", true);
+    Set<String> nodeIds = properties.getUniqueStrings("appcluster.resource." + id + ".nodes", true);
     Set<Csync2ResourceNodePropertiesConfiguration> resourceNodes = AoCollections.newLinkedHashSet(nodeIds.size());
     for (String nodeId : nodeIds) {
       if (!resourceNodes.add(new Csync2ResourceNodePropertiesConfiguration(properties, resourceId, nodeId, type))) {

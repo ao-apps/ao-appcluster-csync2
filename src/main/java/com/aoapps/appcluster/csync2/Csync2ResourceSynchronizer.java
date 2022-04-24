@@ -60,16 +60,16 @@ public class Csync2ResourceSynchronizer extends CronResourceSynchronizer<Csync2R
       case SYNCHRONIZE :
       case TEST_ONLY :
         return
-          (
-            localDnsStatus == NodeDnsStatus.MASTER
-            || localDnsStatus == NodeDnsStatus.SLAVE
-          ) && (
-            remoteDnsStatus == NodeDnsStatus.MASTER
-            || remoteDnsStatus == NodeDnsStatus.SLAVE
-          )
+            (
+                localDnsStatus == NodeDnsStatus.MASTER
+                    || localDnsStatus == NodeDnsStatus.SLAVE
+            ) && (
+                remoteDnsStatus == NodeDnsStatus.MASTER
+                    || remoteDnsStatus == NodeDnsStatus.SLAVE
+            )
         ;
       default :
-        throw new AssertionError("Unexpected mode: "+mode);
+        throw new AssertionError("Unexpected mode: " + mode);
     }
   }
 
@@ -88,12 +88,12 @@ public class Csync2ResourceSynchronizer extends CronResourceSynchronizer<Csync2R
    */
   private static String buildCommandString(String[] command) {
     StringBuilder sb = new StringBuilder();
-    for (int i=0; i<command.length; i++) {
+    for (int i = 0; i < command.length; i++) {
       String arg = command[i];
       if (i == 0) {
         int pos = arg.lastIndexOf('/');
         if (pos != -1) {
-          arg = arg.substring(pos+1);
+          arg = arg.substring(pos + 1);
         }
       } else {
         sb.append(' ');
@@ -139,41 +139,41 @@ public class Csync2ResourceSynchronizer extends CronResourceSynchronizer<Csync2R
       switch (mode) {
         case SYNCHRONIZE :
         {
-          command = new String[] {exe, "-G", groups, "-P", remoteHostname, "-xv"};
+          command = new String[]{exe, "-G", groups, "-P", remoteHostname, "-xv"};
           break;
         }
         case TEST_ONLY :
         {
-          command = new String[] {exe, "-G", groups, "-cr", "/"};
+          command = new String[]{exe, "-G", groups, "-cr", "/"};
           break;
         }
         default :
-          throw new AssertionError("Unexpected mode: "+mode);
+          throw new AssertionError("Unexpected mode: " + mode);
       }
       String commandString = buildCommandString(command);
       ResourceSynchronizationResultStep step;
       try {
         ProcessResult processResult = ProcessResult.exec(command);
         step = new ResourceSynchronizationResultStep(
-          startTime,
-          System.currentTimeMillis(),
-          processResult.getExitVal() == 0 ? ResourceStatus.HEALTHY : ResourceStatus.ERROR,
-          commandString,
-          getList(processResult.getStdout()),
-          null,
-          getList(processResult.getStderr())
+            startTime,
+            System.currentTimeMillis(),
+            processResult.getExitVal() == 0 ? ResourceStatus.HEALTHY : ResourceStatus.ERROR,
+            commandString,
+            getList(processResult.getStdout()),
+            null,
+            getList(processResult.getStderr())
         );
       } catch (ThreadDeath td) {
         throw td;
       } catch (Throwable t) {
         step = new ResourceSynchronizationResultStep(
-          startTime,
-          System.currentTimeMillis(),
-          ResourceStatus.ERROR,
-          commandString,
-          null,
-          null,
-          Collections.singletonList(ErrorPrinter.getStackTraces(t))
+            startTime,
+            System.currentTimeMillis(),
+            ResourceStatus.ERROR,
+            commandString,
+            null,
+            null,
+            Collections.singletonList(ErrorPrinter.getStackTraces(t))
         );
       }
       steps.add(step);
@@ -190,27 +190,27 @@ public class Csync2ResourceSynchronizer extends CronResourceSynchronizer<Csync2R
         ProcessResult processResult = ProcessResult.exec(command);
         int exitVal = processResult.getExitVal();
         step = new ResourceSynchronizationResultStep(
-          startTime,
-          System.currentTimeMillis(),
-          exitVal == 2 ? ResourceStatus.HEALTHY
-          : exitVal == 0 ? ResourceStatus.WARNING
-          : ResourceStatus.ERROR,
-          commandString,
-          getList(processResult.getStdout()),
-          exitVal == 0 ? getList(processResult.getStderr()) : null,
-          exitVal != 0 ? getList(processResult.getStderr()) : null
+            startTime,
+            System.currentTimeMillis(),
+            exitVal == 2 ? ResourceStatus.HEALTHY
+                : exitVal == 0 ? ResourceStatus.WARNING
+                : ResourceStatus.ERROR,
+            commandString,
+            getList(processResult.getStdout()),
+            exitVal == 0 ? getList(processResult.getStderr()) : null,
+            exitVal != 0 ? getList(processResult.getStderr()) : null
         );
       } catch (ThreadDeath td) {
         throw td;
       } catch (Throwable t) {
         step = new ResourceSynchronizationResultStep(
-          startTime,
-          System.currentTimeMillis(),
-          ResourceStatus.ERROR,
-          commandString,
-          null,
-          null,
-          Collections.singletonList(ErrorPrinter.getStackTraces(t))
+            startTime,
+            System.currentTimeMillis(),
+            ResourceStatus.ERROR,
+            commandString,
+            null,
+            null,
+            Collections.singletonList(ErrorPrinter.getStackTraces(t))
         );
       }
       steps.add(step);
