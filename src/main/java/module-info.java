@@ -28,4 +28,4 @@ module com.aoapps.appcluster.csync2 {
   requires com.aoapps.cron; // <groupId>com.aoapps</groupId><artifactId>ao-cron</artifactId>
   requires com.aoapps.lang; // <groupId>com.aoapps</groupId><artifactId>ao-lang</artifactId>
   requires org.dnsjava; // <groupId>dnsjava</groupId><artifactId>dnsjava</artifactId>
-}
+} // TODO: Avoiding rewrite-maven-plugin-4.22.2 truncation
