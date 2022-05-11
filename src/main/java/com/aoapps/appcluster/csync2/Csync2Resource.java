@@ -59,7 +59,11 @@ public class Csync2Resource extends CronResource<Csync2Resource, Csync2ResourceN
   }
 
   @Override
-  protected Csync2ResourceSynchronizer newResourceSynchronizer(Csync2ResourceNode localResourceNode, Csync2ResourceNode remoteResourceNode, ResourceConfiguration<Csync2Resource, Csync2ResourceNode> resourceConfiguration) throws AppClusterConfigurationException {
+  protected Csync2ResourceSynchronizer newResourceSynchronizer(
+      Csync2ResourceNode localResourceNode,
+      Csync2ResourceNode remoteResourceNode,
+      ResourceConfiguration<Csync2Resource, Csync2ResourceNode> resourceConfiguration
+  ) throws AppClusterConfigurationException {
     Csync2ResourceConfiguration csync2ResourceConfiguration = (Csync2ResourceConfiguration) resourceConfiguration;
     return new Csync2ResourceSynchronizer(
         localResourceNode,

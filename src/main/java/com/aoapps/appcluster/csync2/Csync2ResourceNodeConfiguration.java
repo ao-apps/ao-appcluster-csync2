@@ -35,7 +35,7 @@ import com.aoapps.appcluster.Node;
 public interface Csync2ResourceNodeConfiguration extends CronResourceNodeConfiguration<Csync2Resource, Csync2ResourceNode> {
 
   /**
-   * @see Csync2ResourceNode#getExe()
+   * See {@link Csync2ResourceNode#getExe()}.
    */
   String getExe();
 

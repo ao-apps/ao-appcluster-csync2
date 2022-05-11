@@ -38,7 +38,7 @@ import java.util.Set;
 public interface Csync2ResourceConfiguration extends CronResourceConfiguration<Csync2Resource, Csync2ResourceNode> {
 
   /**
-   * @see Csync2Resource#getAllowMultiMaster()
+   * See {@link Csync2Resource#getAllowMultiMaster()}.
    */
   boolean getAllowMultiMaster();
 
