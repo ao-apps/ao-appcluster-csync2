@@ -22,7 +22,7 @@ Application-level clustering tools for [Csync2](http://oss.linbit.com/csync2/).
 * [Project Home](https://oss.aoapps.com/appcluster/csync2/)
 * [Changelog](https://oss.aoapps.com/appcluster/csync2/changelog)
 * [API Docs](https://oss.aoapps.com/appcluster/csync2/apidocs/)
-* [Maven Central Repository](https://search.maven.org/artifact/com.aoapps/ao-appcluster-csync2)
+* [Maven Central Repository](https://central.sonatype.com/search?namespace=com.aoapps&q=a%3Aao-appcluster-csync2)
 * [GitHub](https://github.com/ao-apps/ao-appcluster-csync2)
 
 ## Contact Us
