@@ -43,8 +43,6 @@ along with ao-appcluster-csync2.  If not, see <https://www.gnu.org/licenses/>.
     <description.html><![CDATA[Application-level clustering tools for <a target="${javadoc.target}" href="http://oss.linbit.com/csync2/">Csync2</a>.]]></description.html>
     <!-- TODO: Implement tests -->
     <sonar.coverage.exclusions>**.*</sonar.coverage.exclusions>
-    <!-- Dependencies -->
-    <dnsjava.version>3.5.2</dnsjava.version>
   </properties>
 
   <name>AO AppCluster Csync2</name>
@@ -190,7 +188,7 @@ along with ao-appcluster-csync2.  If not, see <https://www.gnu.org/licenses/>.
                   <location>${project.build.directory}/offlineLinks/com.aoapps/ao-lang</location>
                 </offlineLink>
                 <offlineLink>
-                  <url>https://javadoc.io/doc/dnsjava/dnsjava/${dnsjava.dnsjava.version}/</url>
+                  <url>https://javadoc.io/doc/dnsjava/dnsjava/${dnsjava:dnsjava:jar.version}/</url>
                   <location>${project.build.directory}/offlineLinks/dnsjava/dnsjava</location>
                 </offlineLink>
               </offlineLinks>
@@ -217,7 +215,7 @@ along with ao-appcluster-csync2.  If not, see <https://www.gnu.org/licenses/>.
         <groupId>com.aoapps</groupId><artifactId>ao-lang</artifactId><version>5.5.1${POST-SNAPSHOT}</version>
       </dependency>
       <dependency>
-        <groupId>dnsjava</groupId><artifactId>dnsjava</artifactId><version>${dnsjava.version}</version>
+        <groupId>dnsjava</groupId><artifactId>dnsjava</artifactId><version>3.5.2</version>
       </dependency>
       <!-- Transitive -->
       <dependency>
