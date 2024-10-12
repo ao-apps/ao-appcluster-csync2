@@ -1,6 +1,6 @@
 /*
  * ao-appcluster-csync2 - Application-level clustering tools for Csync2.
- * Copyright (C) 2011, 2015, 2016, 2019, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2011, 2015, 2016, 2019, 2020, 2021, 2022, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -45,6 +45,9 @@ import java.util.List;
  */
 public class Csync2ResourceSynchronizer extends CronResourceSynchronizer<Csync2Resource, Csync2ResourceNode> {
 
+  /**
+   * Creates a new {@link Csync2ResourceSynchronizer}.
+   */
   protected Csync2ResourceSynchronizer(Csync2ResourceNode localResourceNode, Csync2ResourceNode remoteResourceNode, Schedule synchronizeSchedule, Schedule testSchedule) {
     super(localResourceNode, remoteResourceNode, synchronizeSchedule, testSchedule);
   }

@@ -1,6 +1,6 @@
 /*
  * ao-appcluster-csync2 - Application-level clustering tools for Csync2.
- * Copyright (C) 2011, 2016, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2011, 2016, 2021, 2022, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -35,6 +35,9 @@ public class Csync2ResourceNode extends CronResourceNode<Csync2Resource, Csync2R
 
   private final String exe;
 
+  /**
+   * Creates a new {@link Csync2ResourceNode}.
+   */
   protected Csync2ResourceNode(Node node, Csync2ResourceNodeConfiguration resourceNodeConfiguration) {
     super(node, resourceNodeConfiguration);
     this.exe = resourceNodeConfiguration.getExe();

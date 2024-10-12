@@ -1,6 +1,6 @@
 /*
  * ao-appcluster-csync2 - Application-level clustering tools for Csync2.
- * Copyright (C) 2011, 2015, 2016, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2011, 2015, 2016, 2020, 2021, 2022, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -42,6 +42,9 @@ public class Csync2ResourcePropertiesConfiguration extends CronResourcePropertie
   private final boolean allowMultiMaster;
   private final Set<String> groups;
 
+  /**
+   * Creates a new {@link Csync2ResourcePropertiesConfiguration}.
+   */
   protected Csync2ResourcePropertiesConfiguration(AppClusterPropertiesConfiguration properties, String id) throws AppClusterConfigurationException {
     super(properties, id);
     this.allowMultiMaster = properties.getBoolean("appcluster.resource." + id + "." + type + ".allowMultiMaster");
