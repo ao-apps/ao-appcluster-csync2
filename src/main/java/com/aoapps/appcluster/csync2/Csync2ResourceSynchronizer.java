@@ -140,14 +140,16 @@ public class Csync2ResourceSynchronizer extends CronResourceSynchronizer<Csync2R
         long startTime = System.currentTimeMillis();
         String[] command;
         switch (mode) {
-          case SYNCHRONIZE: {
-            command = new String[]{exe, "-G", groups, "-P", remoteHostname, "-xv"};
-            break;
-          }
-          case TEST_ONLY: {
-            command = new String[]{exe, "-G", groups, "-cr", "/"};
-            break;
-          }
+          case SYNCHRONIZE:
+            {
+              command = new String[]{exe, "-G", groups, "-P", remoteHostname, "-xv"};
+              break;
+            }
+          case TEST_ONLY:
+            {
+              command = new String[]{exe, "-G", groups, "-cr", "/"};
+              break;
+            }
           default:
             throw new AssertionError("Unexpected mode: " + mode);
         }
