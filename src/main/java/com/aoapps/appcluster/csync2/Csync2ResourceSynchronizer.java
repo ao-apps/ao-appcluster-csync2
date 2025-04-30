@@ -1,6 +1,6 @@
 /*
  * ao-appcluster-csync2 - Application-level clustering tools for Csync2.
- * Copyright (C) 2011, 2015, 2016, 2019, 2020, 2021, 2022, 2024  AO Industries, Inc.
+ * Copyright (C) 2011, 2015, 2016, 2019, 2020, 2021, 2022, 2024, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -135,89 +135,89 @@ public class Csync2ResourceSynchronizer extends CronResourceSynchronizer<Csync2R
 
     List<ResourceSynchronizationResultStep> steps = new ArrayList<>(2);
 
-      // Step one: synchronize or scan
-      {
-        long startTime = System.currentTimeMillis();
-        String[] command;
-        switch (mode) {
-          case SYNCHRONIZE:
-            {
-              command = new String[]{exe, "-G", groups, "-P", remoteHostname, "-xv"};
-              break;
-            }
-          case TEST_ONLY:
-            {
-              command = new String[]{exe, "-G", groups, "-cr", "/"};
-              break;
-            }
-          default:
-            throw new AssertionError("Unexpected mode: " + mode);
-        }
-        String commandString = buildCommandString(command);
-        ResourceSynchronizationResultStep step;
-        try {
-          ProcessResult processResult = ProcessResult.exec(command);
-          step = new ResourceSynchronizationResultStep(
-              startTime,
-              System.currentTimeMillis(),
-              processResult.getExitVal() == 0 ? ResourceStatus.HEALTHY : ResourceStatus.ERROR,
-              commandString,
-              getList(processResult.getStdout()),
-              null,
-              getList(processResult.getStderr())
-          );
-        } catch (ThreadDeath td) {
-          throw td;
-        } catch (Throwable t) {
-          step = new ResourceSynchronizationResultStep(
-              startTime,
-              System.currentTimeMillis(),
-              ResourceStatus.ERROR,
-              commandString,
-              null,
-              null,
-              Collections.singletonList(ErrorPrinter.getStackTraces(t))
-          );
-        }
-        steps.add(step);
+    // Step one: synchronize or scan
+    {
+      long startTime = System.currentTimeMillis();
+      String[] command;
+      switch (mode) {
+        case SYNCHRONIZE:
+          {
+            command = new String[]{exe, "-G", groups, "-P", remoteHostname, "-xv"};
+            break;
+          }
+        case TEST_ONLY:
+          {
+            command = new String[]{exe, "-G", groups, "-cr", "/"};
+            break;
+          }
+        default:
+          throw new AssertionError("Unexpected mode: " + mode);
       }
-
-      // Step two: test
-      {
-        long startTime = System.currentTimeMillis();
-        String[] command = {exe, "-G", groups, "-T", localHostname, remoteHostname};
-        String commandString = buildCommandString(command);
-
-        ResourceSynchronizationResultStep step;
-        try {
-          ProcessResult processResult = ProcessResult.exec(command);
-          int exitVal = processResult.getExitVal();
-          step = new ResourceSynchronizationResultStep(
-              startTime,
-              System.currentTimeMillis(),
-              exitVal == 2 ? ResourceStatus.HEALTHY
-                  : exitVal == 0 ? ResourceStatus.WARNING
-                  : ResourceStatus.ERROR,
-              commandString,
-              getList(processResult.getStdout()),
-              exitVal == 0 ? getList(processResult.getStderr()) : null,
-              exitVal != 0 ? getList(processResult.getStderr()) : null
-          );
-        } catch (ThreadDeath td) {
-          throw td;
-        } catch (Throwable t) {
-          step = new ResourceSynchronizationResultStep(
-              startTime,
-              System.currentTimeMillis(),
-              ResourceStatus.ERROR,
-              commandString,
-              null,
-              null,
-              Collections.singletonList(ErrorPrinter.getStackTraces(t))
-          );
-        }
-        steps.add(step);
+      String commandString = buildCommandString(command);
+      ResourceSynchronizationResultStep step;
+      try {
+        ProcessResult processResult = ProcessResult.exec(command);
+        step = new ResourceSynchronizationResultStep(
+            startTime,
+            System.currentTimeMillis(),
+            processResult.getExitVal() == 0 ? ResourceStatus.HEALTHY : ResourceStatus.ERROR,
+            commandString,
+            getList(processResult.getStdout()),
+            null,
+            getList(processResult.getStderr())
+        );
+      } catch (ThreadDeath td) {
+        throw td;
+      } catch (Throwable t) {
+        step = new ResourceSynchronizationResultStep(
+            startTime,
+            System.currentTimeMillis(),
+            ResourceStatus.ERROR,
+            commandString,
+            null,
+            null,
+            Collections.singletonList(ErrorPrinter.getStackTraces(t))
+        );
       }
+      steps.add(step);
+    }
+
+    // Step two: test
+    {
+      long startTime = System.currentTimeMillis();
+      String[] command = {exe, "-G", groups, "-T", localHostname, remoteHostname};
+      String commandString = buildCommandString(command);
+
+      ResourceSynchronizationResultStep step;
+      try {
+        ProcessResult processResult = ProcessResult.exec(command);
+        int exitVal = processResult.getExitVal();
+        step = new ResourceSynchronizationResultStep(
+            startTime,
+            System.currentTimeMillis(),
+            exitVal == 2 ? ResourceStatus.HEALTHY
+                : exitVal == 0 ? ResourceStatus.WARNING
+                : ResourceStatus.ERROR,
+            commandString,
+            getList(processResult.getStdout()),
+            exitVal == 0 ? getList(processResult.getStderr()) : null,
+            exitVal != 0 ? getList(processResult.getStderr()) : null
+        );
+      } catch (ThreadDeath td) {
+        throw td;
+      } catch (Throwable t) {
+        step = new ResourceSynchronizationResultStep(
+            startTime,
+            System.currentTimeMillis(),
+            ResourceStatus.ERROR,
+            commandString,
+            null,
+            null,
+            Collections.singletonList(ErrorPrinter.getStackTraces(t))
+        );
+      }
+      steps.add(step);
+    }
 
     return new ResourceSynchronizationResult(localResourceNode, remoteResourceNode, mode, steps);
   }
