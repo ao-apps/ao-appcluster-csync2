@@ -1,6 +1,6 @@
 /*
  * ao-appcluster-csync2 - Application-level clustering tools for Csync2.
- * Copyright (C) 2011, 2015, 2016, 2019, 2020, 2021, 2022, 2024, 2025  AO Industries, Inc.
+ * Copyright (C) 2011, 2015, 2016, 2019, 2020, 2021, 2022, 2024, 2025, 2026  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -142,12 +142,12 @@ public class Csync2ResourceSynchronizer extends CronResourceSynchronizer<Csync2R
       switch (mode) {
         case SYNCHRONIZE:
           {
-            command = new String[]{exe, "-G", groups, "-P", remoteHostname, "-xv"};
+            command = new String[] {exe, "-G", groups, "-P", remoteHostname, "-xv"};
             break;
           }
         case TEST_ONLY:
           {
-            command = new String[]{exe, "-G", groups, "-cr", "/"};
+            command = new String[] {exe, "-G", groups, "-cr", "/"};
             break;
           }
         default:
