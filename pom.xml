@@ -157,13 +157,7 @@ along with ao-appcluster-csync2.  If not, see <https://www.gnu.org/licenses/>.
                       <outputDirectory>${project.build.directory}/offlineLinks/com.aoapps/ao-lang</outputDirectory>
                     </artifactItem>
                     <artifactItem>
-                      <!--
-                      TODO: dnsjava-3.7.0 did not publish javadoc artifact, check for it on newer releases.
-                      https://repo.maven.apache.org/maven2/dnsjava/dnsjava/
                       <groupId>dnsjava</groupId><artifactId>dnsjava</artifactId><classifier>javadoc</classifier>
-                      Using most recent available.
-                      -->
-                      <groupId>dnsjava</groupId><artifactId>dnsjava</artifactId><classifier>javadoc</classifier><version>3.6.5</version>
                       <includes>element-list, package-list</includes>
                       <outputDirectory>${project.build.directory}/offlineLinks/dnsjava/dnsjava</outputDirectory>
                     </artifactItem>
@@ -194,13 +188,7 @@ along with ao-appcluster-csync2.  If not, see <https://www.gnu.org/licenses/>.
                   <location>${project.build.directory}/offlineLinks/com.aoapps/ao-lang</location>
                 </offlineLink>
                 <offlineLink>
-                  <!--
-                  TODO: dnsjava-3.7.0 did not publish javadoc artifact, check for it on newer releases.
-                  https://repo.maven.apache.org/maven2/dnsjava/dnsjava/
                   <url>https://javadoc.io/doc/dnsjava/dnsjava/${dnsjava:dnsjava:jar.version}/</url>
-                  Using most recent available.
-                  -->
-                  <url>https://javadoc.io/doc/dnsjava/dnsjava/3.6.5/</url>
                   <location>${project.build.directory}/offlineLinks/dnsjava/dnsjava</location>
                 </offlineLink>
               </offlineLinks>
@@ -227,7 +215,7 @@ along with ao-appcluster-csync2.  If not, see <https://www.gnu.org/licenses/>.
         <groupId>com.aoapps</groupId><artifactId>ao-lang</artifactId><version>5.9.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
       </dependency>
       <dependency>
-        <groupId>dnsjava</groupId><artifactId>dnsjava</artifactId><version>3.7.0</version>
+        <groupId>dnsjava</groupId><artifactId>dnsjava</artifactId><version>3.7.1</version>
       </dependency>
       <!-- Transitive -->
       <dependency>
